@@ -1,0 +1,16 @@
+{
+  "name": "digital-marketing-lms",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @lms/web\" \"npm run dev --workspace @lms/api\"",
+    "build": "npm run build --workspace @lms/web && npm run build --workspace @lms/api",
+    "start": "concurrently \"npm run start --workspace @lms/web\" \"npm run start --workspace @lms/api\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
